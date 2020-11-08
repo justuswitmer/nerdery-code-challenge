@@ -708,12 +708,25 @@ body {
 /* snack display section*/
 .snackDisplay {
     background-image: url('geo.jpg');
+    justify-content: center;
 }
 
 .snackVote {
     position: absolute;
     top: 8px;
-    right: 16px;
+    right: 10px;
+    z-index: 999;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.voteImage {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-top: 0 solid transparent;
+	border-right: 50px solid #1eb6d4;
+    border-bottom: 50px solid transparent;
 }
 
 .currentSnacks {
@@ -721,7 +734,45 @@ body {
     text-align: center;
     display: inline-block;
     list-style-type: none;
-    height: 200px;
-    width: 250px;
+    height: 245px;
+    width: 315px;
     background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50);
+    margin: 20px 20px 60px 20px;
+    background-image: url('plus.svg');
+}
+
+.snackDisplayImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.snackDisplayBrand {
+    position: absolute;
+    bottom: -25px;
+    color: #ffffff;
+}
+
+.snackDisplayProduct {
+    position: absolute;
+    bottom: -50px;
+    color: #ffffff;
+}
+
+.h2Snack {
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 400;
+    padding: 45px 0 15px 0;
+}
+
+.h3Snack {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 4px 0 35px 0;
 }

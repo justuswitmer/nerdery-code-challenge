@@ -21,11 +21,14 @@ function getSnacks() {
       <div class='currentSnacks'>
         <img 
           src=${snacks.image} 
-          width="50%"
+          width="60%"
+          class='snackDisplayImage'
         />
         <li class='snackVote'>${snacks.votes}</li>
-        <li>${snacks.brand}</li>
-        <li>${snacks.product}</li>
+        <li class='voteImage'></li>
+        <li class='snackDisplayBrand'>${snacks.brand}</li>
+        <li class='snackDisplayProduct'>${snacks.product}</li>
+
       </div>`);
     }
   }).catch(function (err) {

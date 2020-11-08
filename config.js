@@ -29,7 +29,7 @@ module.exports = {
     {
       id: '3',
       brand: "Kashi",
-      product: "Honey Pecan Baklava Nutrition Bars",
+      product: "Honey Pecan Baklava Bars",
       description: "This isn't your typical granola bar. Kashi's new plant-powered bars are a mix of grains, nuts, seeds, pea crisps and nut butter, and they come in four flavors: Dark Chocolate Cashew Chia, Honey Pecan Baklava, Peanut Hemp Crunch, Dark Chocolate and Nut Butter. The best part? Each one packs 8 grams of protein and 4 grams of fiber, so they'll fill you up from second breakfast to lunch.",
       image: `http://localhost:${port}/03.jpg`,
       votes: randomInt(0, 100)
