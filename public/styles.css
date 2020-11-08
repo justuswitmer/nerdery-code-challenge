@@ -462,7 +462,7 @@ body {
 @media (min-width: 801px) {
     .heroBanner {
         border: 12px solid #ffffff;
-        background-image: url('../media/images/banner.jpg');
+        background-image: url('banner.jpg');
     }
 }
 
@@ -703,4 +703,25 @@ body {
 
 .site-ft {
     border-top: 1px solid #acacac;
+}
+
+/* snack display section*/
+.snackDisplay {
+    background-image: url('geo.jpg');
+}
+
+.snackVote {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.currentSnacks {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    height: 200px;
+    width: 250px;
+    background-color: #ffffff;
 }

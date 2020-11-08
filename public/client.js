@@ -17,14 +17,16 @@ function getSnacks() {
     console.log('response of:', response);
     for (let i = 0; i < response.length; i++) {
       let snacks = response[i];
-      $('#snacksOut').append(`<tr>
-        <td>${snacks.id}</td>
-        <td>${snacks.brand}</td>
-        <td>${snacks.product}</td>
-        <td>${snacks.description}</td>
-        <td>${snacks.image}></td>
-        <td>${snacks.votes}></td>
-          </tr>`);
+      $('#snacksOut').append(`
+      <div class='currentSnacks'>
+        <img 
+          src=${snacks.image} 
+          width="50%"
+        />
+        <li class='snackVote'>${snacks.votes}</li>
+        <li>${snacks.brand}</li>
+        <li>${snacks.product}</li>
+      </div>`);
     }
   }).catch(function (err) {
     console.log(err);
