@@ -59,4 +59,38 @@ module.exports = {
       votes: randomInt(0, 100)
     }
   ],
+  "availableSnacks": [
+    {
+      id: '1',
+      product: "Nabisco Oreo Cookies",
+    },
+    {
+      id: '2',
+      product: "General Mills Chex Mix",
+    },
+    {
+      id: '3',
+      product: "Clif Chocolate Chip Energy Bar",
+    },
+    {
+      id: '4',
+      product: "Cheetos Chips",
+    },
+    {
+      id: '5',
+      product: "Baked Lays Potato Chips",
+    },
+    {
+      id: '6',
+      product: "Hershey's Milk Chocolate",
+    },
+    {
+      id: '7',
+      product: "Jack Links Beef Jerky",
+    },
+    {
+      id: '8',
+      product: "Planter's Salted Peanuts",
+    }
+  ],
 };

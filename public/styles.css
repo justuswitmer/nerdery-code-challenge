@@ -776,3 +776,18 @@ body {
     font-weight: 100;
     padding: 4px 0 35px 0;
 }
+
+/* snack voting section*/
+.snackVoteDisplay {
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.h2Vote {
+    color: #000000;
+}
+
+.h3Vote {
+    color: #000000;
+}
