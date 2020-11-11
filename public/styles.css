@@ -791,3 +791,18 @@ body {
 .h3Vote {
     color: #000000;
 }
+
+#availableSnacksHead {
+    background-color: #31798e;
+    color: #ffffff
+}
+
+tr:nth-child(even) {
+    background-color: #d9d9d9;
+    color: #767476;
+}
+
+tr:nth-child(odd) {
+    background-color: #cbcbcb;
+    color: #767476;
+}

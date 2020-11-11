@@ -13,7 +13,7 @@ module.exports = {
     {
       id: '1',
       brand: "Bear Naked",
-      product: "V'nilla Almund Granola",
+      product: "V'nilla Almond Granola",
       description: "Every bag of Granola starts with us foraging for irresistible flavors and bountiful chunks of goodness. This light and crispy Granola is made with whole grain oats and crunchy Almunds.",
       image: `http://localhost:${port}/01.jpg`,
       votes: randomInt(0, 100)
