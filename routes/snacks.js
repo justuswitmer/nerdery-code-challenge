@@ -3,7 +3,7 @@
 const Joi = require('joi');
 const findWhere = require('lodash.findwhere');
 
-module.exports = function(server, CONFIG) {
+module.exports = function (server, CONFIG) {
   var snacks = CONFIG.snacks;
 
   server.route({
@@ -27,7 +27,7 @@ module.exports = function(server, CONFIG) {
       }
     },
     handler: function (request, h) {
-        return snacks;
+      return snacks;
     }
   });
 
@@ -40,9 +40,9 @@ module.exports = function(server, CONFIG) {
       description: 'Increments the vote count for the give snack',
       notes: 'Per-user vote count restriction is not implemented.  NAT candidates are resopnsible for handling this.',
       pre: [
-        function(request, h) {
+        function (request, h) {
           var id = request.params.snackId;
-          var snack = findWhere(snacks, {id: id});
+          var snack = findWhere(snacks, { id: id });
           if (!snack)
             return Boom.badData('Snack ID not recognized');
 
@@ -57,7 +57,9 @@ module.exports = function(server, CONFIG) {
     },
     handler: function (request, h) {
       var id = request.params.snackId;
-      var snack = findWhere(snacks, {id: id});
+      var snack = findWhere(snacks, { id: id });
+      console.log('here is my id in server side post', id);
+      console.log('here is my snack in server side post', snack);
       request.snack.votes++;
       return snack;
     }
