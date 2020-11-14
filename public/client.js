@@ -1,18 +1,23 @@
 $(document).ready(onReady);
 
-let count = 4;
+// counts the remaining votes. 
+let count = 3;
+// array for storing the voted on snacks
 let voteNmbr = [];
+// array that is used to ensure duplicate snacks cannot be selected
 let duplicateCheck = [];
 
+// functions and buttons that are needed on load
 function onReady() {
   console.log('in onReady');
   $(document).on('click', '#addVote', addVote);
   getSnacks();
-  snackVoting();
+  snackVotingDisplay();
   selectionHeader();
   trackCount();
 } // end onReady
 
+// initial rendering of current snacks. Displays the number of votes they have had
 getSnacks = () => {
   $('#snacksOut').empty();
   $.ajax({
@@ -41,7 +46,10 @@ getSnacks = () => {
   }) // end ajax GET /snacks
 } // end getSnacks
 
-snackVoting = () => {
+// Displays all the snacks that can be voted on. 
+// The selection is identical to the current snack display.
+// It was unclear as to whether a new snack array needed to be made.
+snackVotingDisplay = () => {
   $('#snacksVoteOut').empty();
   $('#snacksHeadOut').empty();
   $.ajax({
@@ -76,16 +84,17 @@ snackVoting = () => {
   }).catch(err => {
     console.log(err);
   }) // end ajax GET /snacks
-} // end snackVoting
+} // end snackVotingDisplay
 
+// Displays the count of votes left
 function trackCount() {
-  count--;
   $('#trackCount').empty();
   $('#trackCount').append(`
     <h4>${count} Votes Remaining</h4>
   `);
 }
 
+// Displays the header row for the selected snacks
 function selectionHeader() {
   $('#selectedSnacksHeadOut').empty();
   $('#selectedSnacksHeadOut').append(`
@@ -96,10 +105,15 @@ function selectionHeader() {
   `);
 }
 
+// Checks if a selected snack is a duplicate and sends an alert if it is,
+// POSTS the snack vote to update the snack count,
+// renders the voted on snacks,
+// and calls other functions to show updated info.
 function addVote() {
   let snackId = $(this).data("id");
   let product = $(this).data("product");
   let vote = $(this).data("votes") + 1;
+  count--;
   let snack = {
     product: product,
     vote: vote
@@ -108,7 +122,6 @@ function addVote() {
   voteNmbr.push(snack);
   duplicateCheck.push(product);
   console.log('looking at duplicateCheck', duplicateCheck);
-
   duplicateCheck.map(value => {
     if (new Set(duplicateCheck).size < duplicateCheck.length) {
       console.log('duplicates exsist in voteNbmr');
@@ -140,7 +153,7 @@ function addVote() {
       `)
       )
       getSnacks();
-      snackVoting();
+      snackVotingDisplay();
       selectionHeader();
       trackCount();
     }).catch(err => {
@@ -149,18 +162,4 @@ function addVote() {
     });
   }
 }
-
-
-function test() {
-
-}
-
-// const arrayOfIds = students.map((value) => {
-//   return value.id;
-//   if (new Set(arrayOfIds).size < arrayOfIds.length) {
-//     return true; // Duplicate Exists 
-//   } else {
-//     return false; // Duplicate doesnot  exists
-//   }
-// }
 

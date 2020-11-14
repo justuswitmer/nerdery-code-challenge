@@ -705,7 +705,7 @@ body {
     border-top: 1px solid #acacac;
 }
 
-/* snack display section*/
+/* ------------- STYLING FOR SNACK DISPLAY AND VOTING ------------- */
 .snackDisplay {
     background-image: url('geo.jpg');
     justify-content: center;
