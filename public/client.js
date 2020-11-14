@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 
-let count = 0;
+let count = 4;
 let voteNmbr = [];
 let duplicateCheck = [];
 
@@ -10,6 +10,7 @@ function onReady() {
   getSnacks();
   snackVoting();
   selectionHeader();
+  trackCount();
 } // end onReady
 
 getSnacks = () => {
@@ -22,17 +23,18 @@ getSnacks = () => {
     for (let i = 0; i < response.length; i++) {
       let snacks = response[i];
       $('#snacksOut').append(`
-      <div class='currentSnacks'>
-        <img 
-          src=${snacks.image} 
-          width="60%"
-          class='snackDisplayImage'
-        />
-        <li class='snackVote'>${snacks.votes}</li>
-        <li class='voteImage'></li>
-        <li class='snackDisplayBrand'>${snacks.brand}</li>
-        <li class='snackDisplayProduct'>${snacks.product}</li>
-      </div>`);
+        <div class='currentSnacks'>
+          <img 
+            src=${snacks.image} 
+            width="60%"
+            class='snackDisplayImage'
+          />
+          <li class='snackVote'>${snacks.votes}</li>
+          <li class='voteImage'></li>
+          <li class='snackDisplayBrand'>${snacks.brand}</li>
+          <li class='snackDisplayProduct'>${snacks.product}</li>
+        </div>
+      `);
     }
   }).catch(err => {
     console.log(err);
@@ -75,6 +77,14 @@ snackVoting = () => {
     console.log(err);
   }) // end ajax GET /snacks
 } // end snackVoting
+
+function trackCount() {
+  count--;
+  $('#trackCount').empty();
+  $('#trackCount').append(`
+    <h4>${count} Votes Remaining</h4>
+  `);
+}
 
 function selectionHeader() {
   $('#selectedSnacksHeadOut').empty();
@@ -132,6 +142,7 @@ function addVote() {
       getSnacks();
       snackVoting();
       selectionHeader();
+      trackCount();
     }).catch(err => {
       console.log('error in POST', err);
       alert('there has been an error; please try again later');

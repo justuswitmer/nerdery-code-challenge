@@ -729,6 +729,10 @@ body {
     border-bottom: 50px solid transparent;
 }
 
+.centerSnacks {
+    margin-left: 110px;
+}
+
 .currentSnacks {
     position: relative;
     text-align: center;
@@ -739,7 +743,6 @@ body {
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50);
     margin: 20px 20px 60px 20px;
-    background-image: url('plus.svg');
 }
 
 .snackDisplayImage {
@@ -779,26 +782,51 @@ body {
 
 /* Snack Voting Section*/
 .snackVoteDisplay {
+    grid-template-columns: [col-1]50% [col-2]50%;
+    grid-template-rows: [row-1]auto [row-2]auto [row-3]auto;
     justify-content: center;
     position: relative;
     text-align: center;
     display: grid;
-    grid-template-columns: [col-1]50% [col-2]50%;
-    grid-template-rows: [row-1]auto [row-2]auto [row-3]auto;
+    margin-top: 200px;
+    margin-bottom: 70px;
 }
 
 .h2Vote {
     color: #000000;
-    grid-column-start: col-1;
-    grid-column-end: col-2;
     grid-row-start: row-1;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 60px;
+    font-size: 50px;
+    color: #767476;
 }
 
 .h3Vote {
     color: #000000;
-    grid-column-start: col-1;
-    grid-column-end: col-2;
     grid-row-start: row-1;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 115px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #767476;
+}
+
+#trackCount {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 155px;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #767476;
+    border-top: 1px solid #767476;
+    width: 280px;
+    text-align: center;
 }
 
 .snackVoteTable {
