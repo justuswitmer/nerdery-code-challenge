@@ -777,19 +777,45 @@ body {
     padding: 4px 0 35px 0;
 }
 
-/* snack voting section*/
+/* Snack Voting Section*/
 .snackVoteDisplay {
     justify-content: center;
     position: relative;
     text-align: center;
+    display: grid;
+    grid-template-columns: [col-1]50% [col-2]50%;
+    grid-template-rows: [row-1]auto [row-2]auto [row-3]auto;
 }
 
 .h2Vote {
     color: #000000;
+    grid-column-start: col-1;
+    grid-column-end: col-2;
+    grid-row-start: row-1;
 }
 
 .h3Vote {
     color: #000000;
+    grid-column-start: col-1;
+    grid-column-end: col-2;
+    grid-row-start: row-1;
+}
+
+.snackVoteTable {
+    grid-column-start: col-1;
+    grid-column-end: col-1;
+    grid-row-start: row-3;
+    margin-left: 10%;
+    width: 85%;
+}
+
+.snackSelectTable {
+    grid-column-start: col-2;
+    grid-column-end: col-2;
+    grid-row-start: row-3;
+    margin-right: 10%;
+    width: 70%;
+    text-align: left;
 }
 
 #availableSnacksHead {
@@ -797,12 +823,100 @@ body {
     color: #ffffff
 }
 
+#snackHeadTitle {
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+#snackHeadTitleH3 {
+    position: relative;
+    left: -45px;
+}
+
+.availableSnacksList {
+    text-align: left;
+    font-size: 14px;
+}
+
+#nmbrVotes {
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    color: #31798e;
+    border-radius: 50%;
+    list-style-type: none;
+    position: relative;
+    top: -8px;
+}
+
+#nmbrVotesP {
+    position: relative;
+    top: 3px;
+    font-size: 14px;
+}
+
 tr:nth-child(even) {
     background-color: #d9d9d9;
     color: #767476;
+    height: 40px;
 }
 
 tr:nth-child(odd) {
     background-color: #cbcbcb;
     color: #767476;
+    height: 40px;
+}
+
+#addVote {
+    width: 40px;
+    border: none;
+    margin-right: -14px;
+    height: 40px;
+    background-color: #aca9a952;
+}
+
+#selectedSnacksHead {
+    background-color: #ffffff;
+    border-bottom: 1px solid #767476ad;
+}
+
+#selectedSnacksHeadH3 {
+    font-size: 30px;
+    font-weight: 200;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+#totalVotes {
+    height: 20px;
+    width: 20px;
+    background-color: #31798e;
+    color: #ffffff;
+    border-radius: 50%;
+    list-style-type: none;
+    position: relative;
+    top: -8px;
+}
+
+#totalVotesP {
+    position: relative;
+    top: 3px;
+    left: 6px;
+    font-size: 14px;
+}
+
+#selectedSnacksBodyTr {
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+.tdItem {
+    position: relative;
+    top: 13px;
+    font-size: 14px;
+    left: 5px;
 }

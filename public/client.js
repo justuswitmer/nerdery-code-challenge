@@ -48,9 +48,10 @@ snackVoting = () => {
     headers: { "Authorization": 'Bearer 33b55673-57c7-413f-83ed-5b4ae8d18827' }
   }).then(response => {
     $('#snacksHeadOut').append(`
-    <tr id='availableSnacksHead'>
-      <th>Available Items</th>
-      <th class='nmbrVotes'>${response.length}</th>
+    <tr id='availableSnacksHead'>  
+    <th></th>
+    <th id='snackHeadTitle'><h3 id='snackHeadTitleH3'>Available Items</h3></th>
+    <th><li id='nmbrVotes'><p id='nmbrVotesP'>${response.length}</p></li></th>
     </tr>
     `)
     for (let i = 0; i < response.length; i++) {
@@ -58,13 +59,13 @@ snackVoting = () => {
       $('#snacksVoteOut').append(`
         <tr class='availableSnacksList'>
           <td>
-            <button 
-              id='addVote'  
-              data-id='${snacks.id}'
-              data-product="${snacks.product}"
-              data-votes='${snacks.votes}'>
-            <img src='./plus.svg' width='10%'/>
-            </button>
+              <button 
+                id='addVote'  
+                data-id='${snacks.id}'
+                data-product="${snacks.product}"
+                data-votes='${snacks.votes}'>
+              <img src='./plus.svg' width='50%'/>
+              </button>
           </td>
           <td id='snackProduct'>${snacks.product}</td>
           <td>${snacks.votes}</td>
@@ -76,11 +77,11 @@ snackVoting = () => {
 } // end snackVoting
 
 function selectionHeader() {
-  $('#selectedSnacksHead').empty();
-  $('#selectedSnacksHead').append(`
-  <tr>
-    <th>Selection</th>
-    <th>${voteNmbr.length}</th>
+  $('#selectedSnacksHeadOut').empty();
+  $('#selectedSnacksHeadOut').append(`
+  <tr id='selectedSnacksHead'>
+    <th><h3 id='selectedSnacksHeadH3'>Selection</h3></th>
+    <th><li id='totalVotes'><p id='totalVotesP'>${voteNmbr.length}</p></li></th>
   </tr>
   `);
 }
@@ -119,12 +120,12 @@ function addVote() {
       headers: { "Authorization": 'Bearer 33b55673-57c7-413f-83ed-5b4ae8d18827' }
     }).then(response => {
       console.log('this is my reponse:', response);
-      $('#selectedSnacksBody').empty();
+      $('#selectedSnacksBodyOut').empty();
       voteNmbr.map(snack =>
-        $('#selectedSnacksBody').append(`
-        <tr>
-          <td>${snack.product}</td>
-          <td>${snack.vote}</td>
+        $('#selectedSnacksBodyOut').append(`
+        <tr id='selectedSnacksBodyTr'>
+          <td><p class='tdItem'>${snack.product}</p></td>
+          <td><p class='tdItem'>${snack.vote}</p></td>
         </tr>
       `)
       )
